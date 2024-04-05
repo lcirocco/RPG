@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkohitq83ltp5"]
+
+[ext_resource type="Script" path="res://Music.gd" id="1_dgyoh"]
+[ext_resource type="AudioStream" uid="uid://b8dhiwy454pa0" path="res://FX/080165_guitarrewav-80981.mp3" id="2_inckw"]
+
+[node name="Music" type="Node3D"]
+script = ExtResource("1_dgyoh")
+
+[node name="StringOne" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_inckw")
+
+[node name="StringTwo" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_inckw")
+
+[node name="StringThree" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_inckw")
+
+[node name="StringFour" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_inckw")
+max_db = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="StringTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StringTimer" to="." method="_on_string_timer_timeout"]

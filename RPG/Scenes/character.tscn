@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bend432lgw021"]
+
+[ext_resource type="Script" path="res://Scenes/character.gd" id="1_s2omi"]
+[ext_resource type="Script" path="res://Scenes/CharacterLight.gd" id="2_j7ryv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eva47"]
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_s2omi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_eva47")
+
+[node name="CharacterLight" type="OmniLight3D" parent="."]
+light_color = Color(0.784314, 0.592157, 0.0941176, 1)
+script = ExtResource("2_j7ryv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
